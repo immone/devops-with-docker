@@ -1,2 +1,2 @@
 # devops-with-docker
-DevOps with Docker
+DevOps with Docker-course in University of Helsinki
