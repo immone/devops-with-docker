@@ -1,0 +1,3 @@
+changed localhost:3000 -> localhost in frontend dockerfile environment variable REQUEST_ORIGIN and similarly changed 
+REACT_APP_BACKEND_URL to localhost/api/ in backend dockerfile
+

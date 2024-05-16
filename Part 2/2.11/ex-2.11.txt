@@ -1,0 +1,2 @@
+We will be utilizing Docker containers in our software development course project (Ohjelmistotuotantoprojekti) over the summer, so 
+I'll come back to this once we have progressed more. :)
