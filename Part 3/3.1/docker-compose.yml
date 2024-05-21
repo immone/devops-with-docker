@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      
+  express-app:
+    image: imm1n/express-app
+    ports:
+       - 8080:8080
