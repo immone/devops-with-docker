@@ -1,0 +1,19 @@
+## install Node.js
+FROM golang:1.16
+
+## workdir
+WORKDIR /usr/src/app
+
+## from README.md
+EXPOSE 8080
+
+## copy files
+COPY . .
+
+## build
+RUN go build && useradd -m appuser
+USER appuser
+
+## Environment variable for port and pass url
+
+CMD PORT=8000 REQUEST_ORIGIN=http://localhost:3000 ./server

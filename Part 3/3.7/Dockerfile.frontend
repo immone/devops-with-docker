@@ -1,0 +1,20 @@
+FROM node:16.20.2
+
+## from README.md
+EXPOSE 3000
+
+## Working directory
+WORKDIR /usr/src/app
+
+## Copy source code
+COPY . .
+
+ENV REACT_APP_BACKEND_URL=http://localhost:8080 
+
+## install packages
+RUN npm install && npm run build && npm install -g serve && useradd -m appuser
+
+# changer user
+USER appuser
+
+CMD ["serve", "-s", "-l", "3000", "build"]
