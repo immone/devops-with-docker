@@ -1,0 +1,19 @@
+## install Node.js
+FROM alpine:latest
+
+## workdir
+WORKDIR /usr/src/app
+
+## from README.md
+EXPOSE 8080
+
+## copy files
+COPY . .
+
+## build
+RUN apk add --no-cache go && go build && addgroup -S usergroup && \
+    adduser -S appuser -G usergroup && apk del go
+
+## Environment variable for port and pass url
+
+CMD PORT=8000 REQUEST_ORIGIN=http://localhost:3000 ./server
